@@ -155,6 +155,7 @@ entity Travel {
 
     travelId        : String;
     empId           : Association to Employee;
+    empName         :Association to Employee;
     origin          : String;
     destination     : String;
     dateOfDeparture : Date;
@@ -165,7 +166,7 @@ entity Travel {
     travelStatus    : Status;
     noOfDays        : Integer;
     noOfPassengers  : NOp;
-    passengerName   : String;
+    passengerName   : array of String;
     travelType      : TType;
     travelCity      : Association to NationalCities;
     travelMode      : Mode;

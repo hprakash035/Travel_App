@@ -1,6 +1,1 @@
-
-
-travelId,empId_Empid,origin,destination,dateOfDeparture,dateOfArrival,dateOfReturn,description,price,travelStatus,noOfDays,noOfPassengers,passengerName,travelType,travelMode,RoundTrip,Accomandation,billable
-Ingenex001,I101,Delhi,Mumbai,2023-10-11,2023-10-12,2023-10-13,Welcome Buddy,1200,APD,2,1,Rocky,National,Flight,OneWay,Yes,Yes
-
- 
+travelId,empId_Empid,empName_Empid,origin,destination,dateOfDeparture,dateOfArrival,dateOfReturn,description,price,travelStatus,noOfDays,noOfPassengers,passengerName,travelType,travelMode,RoundTrip,Accomandation,billable
