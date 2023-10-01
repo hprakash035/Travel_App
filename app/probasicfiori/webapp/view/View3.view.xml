@@ -1,0 +1,252 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    controllerName="probasicfiori.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Page
+        id="_IDGenPage1"
+        title="Passenger Detail"
+    >
+        <Panel id="_IDGenPanel1">
+            <Shell id="_IDGenShell1">
+                <form:SimpleForm
+                    id="_IDGenSimpleForm1"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanXL="4"
+                    labelSpanL="4"
+                    labelSpanM="12"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="0"
+                    emptySpanL="0"
+                    emptySpanM="0"
+                    emptySpanS="0"
+                    columnsXL="2"
+                    columnsL="2"
+                    columnsM="1"
+                    singleContainerFullSize="false"
+                >
+                    <Button id="_IDGenButton4"
+                        text="back"
+                        class="back"
+                        press=".backButton"
+                        width="50px"
+                    />
+                    <Label id="_IDGenLabel17" />
+
+                    <form:SimpleForm
+                        id="_IDGenSimpleForm2"
+                        editable="true"
+                        layout="ResponsiveGridLayout"
+                        width="350px"
+                    >
+                        <Text id="_IDGenText4" text="Name of Passenger:" />
+                    </form:SimpleForm>
+
+                    <Label
+                        id="_IDGenLabel2"
+                        text=""
+                    />
+
+                    <Text
+                        id="_IDGenText13"
+                        text=""
+                    />
+
+                    <Label
+                        id="_IDGenLabel3"
+                        text="Origin"
+                    />
+
+                    <Select
+                        id="city"
+                        width="300px"
+                        items="{/NationalCities}"
+                    >
+                        <items>
+                            <core:Item
+                                id="_IDGenItem1"
+                                text="{cityName}"
+                            />
+                        </items>
+                    </Select>
+
+                    <Label
+                        id="_IDGenLabel4"
+                        text=""
+                    />
+
+                    <Text
+                        id="_IDGenText2"
+                        text=""
+                    />
+
+                    <Label
+                        id="_IDGenLabel5"
+                        text="Destination"
+                    />
+
+                    <Select
+                        id="city2"
+                        selectedKey="{City}"
+                        width="300px"
+                        items="{/NationalCities}"
+                        change=".destination"
+                    >
+                        <items>
+                            <core:Item
+                                id="_IDGenItem5"
+                                text="{cityName}"
+                            />
+                        </items>
+                    </Select>
+
+                    <Label id="_IDGenLabel12" text="" />
+
+                    <Text id="_IDGenText5" text="" />
+
+                    <Label
+                        id="_IDGenLabel10"
+                        text="Billable"
+                    />
+
+                    <Select
+                        id="billable_value"
+                        selectedKey="{City}"
+                        width="300px"
+                        change=".billable"
+                    >
+                        <items>
+                            <core:Item
+                                id="ui6"
+                                text="select"
+                            />
+
+                            <core:Item
+                                id="_IDGenItem9"
+                                text="Yes"
+                            />
+
+                            <core:Item
+                                id="_IDGenItem10"
+                                text="No"
+                            />
+                        </items>
+                    </Select>
+
+                    <MultiInput
+                        id="Customer_input"
+                        placeholder="Customer"
+                    />
+
+                    <core:Title
+                        id="_IDGenTitle1"
+                        text=""
+                    />
+
+                    <Label
+                        id="_IDGenLabel6"
+                        text="Departure Date"
+                    />
+
+                    <!-- <DatePicker
+
+                    id="DP1"
+
+                    value="{
+
+                        'path':'/DateOfArrival',
+
+                        'type':'sap.ui.model.type.Date',
+
+                        'formatOptions': {
+
+                            'pattern': 'yyyy-MM-dd'
+
+                        }
+
+                    }"
+
+                    change="handleChange"
+
+                    class="sapUiSmallMarginBottom"/> -->
+
+                    <DatePicker id="datePicker" />
+
+                    <Label
+                        id="_IDGenLabel7"
+                        text="Arrival Date"
+                    />
+
+                    <DatePicker
+                        id="datePicker1"
+                        change="handleChange"
+                    />
+
+                    <Label
+                        id="_IDGenLabel8"
+                        text="Return Date"
+                    />
+
+                    <DatePicker
+                        id="datePicker2"
+                        change="handleChange1"
+                    />
+
+                    <Label
+                        id="_IDGenLabel9"
+                        text="Number of Days"
+                    />
+
+                    <Input
+                        id="_IDGenInput1"
+                        value=""
+                    />
+
+                    <Label
+                        id="_IDGenLabel11"
+                        text="Hotel Accomodation"
+                    />
+
+                    <Switch
+                        id="_IDGenSwitch1"
+                        enabled="true"
+                        type="AcceptReject"
+                        change=".hhh"
+                    />
+
+                    <Text
+                        id="_IDGenText3"
+                        text=""
+                    />
+                </form:SimpleForm>
+            </Shell>
+        </Panel>
+
+        <footer>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+
+                <Button
+                    id="_IDGenButton1"
+                    text="Submit"
+                    press="onSubmit"
+                />
+
+                <Button
+                    id="_IDGenButton2"
+                    text="Save Draft"
+                />
+
+                <Button
+                    id="_IDGenButton3"
+                    text="Cancel"
+                />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

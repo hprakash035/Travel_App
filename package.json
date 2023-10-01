@@ -20,7 +20,8 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-frontend": "cds watch --open frontend/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
