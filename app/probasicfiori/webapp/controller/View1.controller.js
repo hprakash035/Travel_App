@@ -40,7 +40,7 @@ sap.ui.define(
          var oOrigin1 = this.getView().byId("input2").getSelectedItem().getText();
         //   var oOrigin2 = this.getView().byId("input3").getValue();
         //   var startDate=Date.parse(oOrigin2)
-        console.log(oOrigin);
+        //console.log(oOrigin);
         //  console.log("hello");
         //  console.log(typeof(oOrigin2));
         //  var oOrigin3 = this.getView().byId("input4").getValue();
