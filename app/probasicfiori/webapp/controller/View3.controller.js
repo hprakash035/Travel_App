@@ -108,6 +108,10 @@ sap.ui.define([
 
         var hotelAccVal;
 
+        var travelId;
+
+        var travelIdCount=0;
+
         // var data=oEvent.mParameters.arguments;
 
  
@@ -730,25 +734,53 @@ sap.ui.define([
 
             });
 
- 
+           
 
         },
 
- 
+       
 
         onSubmit:function(){
 
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+
+            travelIdCount=travelIdCount+1
+
+            if(travelIdCount<10){
+
+                travelId=`000${travelIdCount}`
+
+            }
+
+            else if(travelIdCount>=10 && travelIdCount<100){
+
+                travelId=`00${travelIdCount}`
+
+            }
+
+            else if(travelIdCount>=100 && travelIdCount<1000){
+
+                travelId=`0${travelIdCount}`
+
+            }
+
+            else if(travelIdCount>=1000){
+
+                travelId=`${travelIdCount}`
+
+            }
+
             var oTravel={
 
-                "travelId":"Ingenex005",
+                "travelId":travelId,
 
- "empId_Empid":"I105",
+ "empId_Empid":"",
 
- "empName_Empid":"Rohan",
+ "empName_Empid":PassengerName1,
 
- "origin":"Gurgaon",
+ "origin":origin,
 
- "destination":"Mumbai",
+ "destination":destination,
 
  "dateOfDeparture":"2023-10-11",
 
@@ -758,33 +790,29 @@ sap.ui.define([
 
  "description":"Welcome buddy",
 
- "price":12000,
+ "price":null,
 
- "travelStatus":"APD",
+ "travelStatus":"",
 
- "noOfDays":5,
+ "noOfDays":NumberOfdays,
 
- "noOfPassengers":"1",
+ "noOfPassengers":NumberOfPassenger,
 
- "passengerName":["Mr Rohan"],
+ "passengerName":[],
 
- "travelType":"National",
+ "travelType":travelType,
 
- "travelMode":"Flight",
+ "travelMode":travelMode,
 
- "RoundTrip":"OneWay",
+ "RoundTrip":tripType,
 
- "Accomandation":"Yes",
+ "Accomandation":"",
 
-  "billable":"Yes"
+  "billable":BillableCustomer
 
             }
 
-   
-
-   
-
-               
+     
 
                 var JsonData=JSON.stringify(oTravel)
 
@@ -792,7 +820,7 @@ sap.ui.define([
 
  
 
-                 var EndPoint="http://localhost:4004/odata/v4/travel/Travel";
+                 let EndPoint="/odata/v4/travel/Travel";
 
                 fetch(EndPoint,{
 
@@ -810,9 +838,11 @@ sap.ui.define([
 
                 .then(function(res){
 
-                    if(res.ok){
+                    if(res){
 
                         console.log("Entity created successfully");
+
+                       oRouter.navTo("RouteView1")
 
                     }
 
@@ -830,7 +860,13 @@ sap.ui.define([
 
                 })
 
-        }
+        },
+
+ 
+
+       
+
+       
 
  
 
